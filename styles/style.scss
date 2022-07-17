@@ -1,0 +1,206 @@
+$dark-cyan: hsl(183, 100%, 15%);
+$dark-grey-cyan: hsl(186, 14%, 43%);
+$grey-cyan: hsl(184, 14%, 56%);
+$light-grey-cyan: hsl(185, 41%, 84%);
+$input-font: hsl(172, 67%, 45%);
+$light-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$font: "Space Mono", monospace; //font-size: 24px
+// variavéis declaradas
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-grey-cyan;
+  font-family: $font;
+  padding: 10vh 10vw;
+  img {
+    width: 5vw;
+    height: 5vh;
+    margin: 6vh;
+  }
+  main {
+    display: flex;
+    background-color: $white;
+    justify-content: center;
+    min-width: 60vw;
+    height: 55vh;
+    border-radius: 30px;
+    padding: 3vh 2vw;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 3vw 0 0;
+      width: 55%;
+      .bill {
+        h4 {
+          font-size: 1.5rem;
+          color: $dark-grey-cyan;
+          margin-bottom: 1rem;
+        }
+        input[type="text"] {
+          background-color: $light-cyan;
+          height: 36px;
+          width: 100%;
+          color: $dark-cyan;
+          font-size: 1.5rem;
+          font-weight: bolder;
+          font-family: $font;
+          border-style: none;
+          text-align: right;
+          background: url(/images/icon-dollar.svg) no-repeat left;
+        }
+      }
+      .tip-percent {
+        h4 {
+          font-size: 1.5rem;
+          color: $dark-grey-cyan;
+          margin-bottom: 1rem;
+        }
+        .input-grid {
+          display: grid;
+          align-content: center;
+          grid-template-columns: 33% 33% 33%;
+          gap: 0.8rem;
+          input[type="button"] {
+            background-color: $dark-cyan;
+            border-style: none;
+            height: 3rem;
+            border-radius: 5px;
+            color: $white;
+            font-weight: bolder;
+            font-family: $font;
+            font-size: 1.2rem;
+            cursor: pointer;
+          }
+          #customtip {
+            background-color: $light-cyan;
+            color: $dark-grey-cyan;
+          }
+        }
+      }
+      .number-people {
+        h4 {
+          font-size: 1.5rem;
+          color: $dark-grey-cyan;
+          margin-bottom: 1rem;
+        }
+        input[type="number"] {
+          background-color: $light-cyan;
+          height: 36px;
+          width: 100%;
+          color: $dark-cyan;
+          font-size: 1.5rem;
+          font-weight: bolder;
+          font-family: $font;
+          border-style: none;
+          text-align: right;
+          background: url(/images/icon-person.svg) no-repeat left;
+        }
+      }
+    }
+    .result {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $dark-cyan;
+      border-radius: 30px;
+      width: 45%;
+      padding: 4vh 2vw;
+      .tip-amount {
+        display: flex;
+        justify-content: space-between;
+        p {
+          display: flex;
+          flex-direction: column;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: $white;
+          label {
+            font-size: 1rem;
+            font-weight: 100;
+            color: $input-font;
+          }
+        }
+        #tip-amount {
+          font-size: 2.3rem;
+          color: $input-font;
+        }
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        p {
+          display: flex;
+          flex-direction: column;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: $white;
+          label {
+            font-size: 1rem;
+            font-weight: 100;
+            color: $input-font;
+          }
+        }
+        #total {
+          font-size: 2.3rem;
+          color: $input-font;
+        }
+      }
+      #reset {
+        height: 3rem;
+        background-color: $input-font;
+        border-style: none;
+        border-radius: 5px;
+        font-weight: bolder;
+        font-family: $font;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    img {
+      margin: 0 0 5vh 0;
+      width: 20vw;
+      height: 8vh;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      border-radius: 30px 30px 0 0;
+      height: auto;
+      padding: 5vh 5vw;
+      .container {
+        width: 100%;
+        font-size: 0.4rem;
+        .tip-percent {
+          margin: 4vh 0;
+          .input-grid {
+            display: grid;
+            align-content: center;
+            grid-template-columns: 50% 50%;
+          }
+        }
+      }
+      .result {
+        width: 100%;
+        margin: 4vh 0 0 0;
+        padding: 8vh 6vw;
+      }
+    }
+  }
+}
